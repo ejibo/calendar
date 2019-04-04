@@ -11,3 +11,4 @@ Vagrantfile
 .vagrant
 composer.lock
 *.log
+*/DS_Store
