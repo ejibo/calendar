@@ -1,7 +1,7 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
-use app\index\Model\ScheduleTime;
+use app\index\model\ScheduleTime;
 use think\Db;
 use think\Request;
 
