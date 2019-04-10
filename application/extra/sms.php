@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 return [
 	'sms_appid' => '012e273529e240a1aa7e28cf29712084',		//应用id
 	'sms_accountsid' => '7bfb2be380412d06a4d4e4521b64429f',	//Account Sid
