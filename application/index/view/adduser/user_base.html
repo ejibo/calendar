@@ -1,0 +1,577 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>北大软微日程管理系统</title>
+    <meta name="description" content="北大软微日程管理系统">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/assets/css/normalize.css">
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="/static/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/sweetalert.css">
+</head>
+
+<body>
+<!-- Left Panel -->
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="menu-title">日程查询统计</li><!-- /.menu-title -->
+                <li class="menu-item-has-children">
+                    <a href="../index/index.html"> <i class="menu-icon fa fa-search-plus"></i>日程查询</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-bar-chart-o"></i>日程统计 </a>
+                </li>
+
+
+                <li class="menu-title">日程管理配置</li><!-- /.menu-title -->
+                <li class="menu-item-has-children">
+                    <a href="../index/time.html"> <i class="menu-icon fa fa-calendar"></i>时间段管理</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="area.html"> <i class="menu-icon fa ti-location-pin"></i>地点管理 </a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="thing.html"> <i class="menu-icon fa fa-book"></i>事项管理</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-folder-open-o"></i>白名单管理 </a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-arrows"></i>
+                        设置可维护日程范围</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-calendar-o"></i>
+                        配置工作日</a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-square-o"></i>
+                        缺省日程维护</a>
+
+                <li class="menu-title">用户管理</li><!-- /.menu-title -->
+                <li class="menu-item-has-children active">
+                    <a href="user_base.html"> <i class="menu-icon fa fa-user"></i>基础管理 </a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-building-o"></i>部门管理 </a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-lemon-o"></i>职务管理 </a>
+                </li>
+
+                <li class="menu-title">管理员管理</li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-group"></i>基础管理 </a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-credit-card"></i>角色管理 </a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-sitemap"></i>权限管理 </a>
+                </li>
+
+                <li class="menu-title">日志管理</li><!-- /.menu-title -->
+                <li class="menu-item-has-children">
+                    <a href="log.html"> <i class="menu-icon fa fa-search"></i>日志查询</a>
+                </li>
+
+                <li class="menu-title">消息管理</li><!-- /.menu-title -->
+                <li class="menu-item-has-children">
+                    <a href="#"> <i class="menu-icon fa fa-comment-o"></i>消息模板</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside>
+<!-- /#left-panel -->
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="top-left">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../index/index.html"><img src="/static/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="../index/index.html"><img src="/static/images/logo2.png" alt="Logo"></a>
+                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+        <div class="top-right">
+            <div class="header-menu">
+                <div class="header-left">
+                    <button class="search-trigger"><i class="fa fa-search"></i></button>
+                    <div class="form-inline">
+                        <form class="search-form">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                            <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="user-area dropdown float-right">
+                    <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="user-avatar rounded-circle" src="/static/images/admin.jpg" alt="User Avatar">
+                    </a>
+
+                    <div class="user-menu dropdown-menu">
+                        <a class="nav-link" href="page-login.html"><i class="fa fa-power-off"></i>退出</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- /#header -->
+    <!-- Content -->
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="box-title">所有用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#smallmodal1">添加用户</button>
+                                <input type="file" id="inputExcel" />
+                                <button class="btn btn-success btn-sm" id="importExcel">批量导入</button>
+                            </h4>
+                        </div>
+                        <div class="card-body--">
+                            <div class="table-stats">
+                                <table id="bootstrap-data-table" class="table">
+                                    <thead>
+                                    <tr>
+                                        <th class="serial">序号</th>
+                                        <th>学(工)号</th>
+                                        <th>姓名</th>
+                                        <th>用户类型</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="serial">1.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">普通用户</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">2.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">系领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">3.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">部门领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">4.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">院领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">5.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">普通用户</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">6.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">系领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">7.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">部门领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">8.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">院领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">9.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">普通用户</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">10.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">系领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">11.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">部门领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">12.</td>
+                                        <td>  <span class="product">1801210880</span> </td>
+                                        <td>  <span class="product">孙佳静</span> </td>
+                                        <td> <span class="product">院领导</span> </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                <i class="fa fa-magic"></i>&nbsp;编辑
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                <i class="fa fa-exclamation"></i>&nbsp;删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="scrollmodalLabel">编辑用户</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-credit-card"></i>
+                                        </div>
+                                        <input type="text" id="username" name="username" value="1801210880" class="form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <input type="text" id="username" name="username" value="孙佳静" class="form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                        <select name="select" id="select" class="form-control">
+                                            <option value="0">普通用户</option>
+                                            <option value="1">院领导</option>
+                                            <option value="2">系领导</option>
+                                            <option value="3">部门领导</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-asterisk"></i>
+                                        </div>
+                                        <input type="password" id="username" name="password" placeholder="请输入新密码" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-asterisk"></i>
+                                        </div>
+                                        <input type="password" id="username" name="password" placeholder="确认密码" class="form-control">
+                                    </div>
+                                </div>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                <a href="user_base.html"><button type="button" class="btn btn-success">确认</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="smallmodal1" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="scrollmodalLabel">添加用户</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-credit-card"></i>
+                                        </div>
+                                        <input type="text" id="work_id" name="username" placeholder="学(工)号" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <input type="text" id="name" name="username" placeholder="姓名" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                        <select name="select" id="type_id" class="form-control">
+                                            <option value="0">普通用户</option>
+                                            <option value="1">院领导</option>
+                                            <option value="2">系领导</option>
+                                            <option value="3">部门领导</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                        <select name="select" id="depart_id" class="form-control">
+                                            <option value="1">院长办公室</option>
+                                            <option value="2">综合办公室</option>
+                                            <option value="3">财务办公室</option>
+                                            <option value="4">招生办公室</option>
+                                            <option value="5">教务办公室</option>
+                                            <option value="6">科研与信息化办公室</option>
+                                            <option value="7">后勤服务中心</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                        <select name="select" id="position_id" class="form-control">
+                                            <option value="1">院长</option>
+                                            <option value="2">副院长</option>
+                                            <option value="3">党委书记</option>
+                                            <option value="4">党委副书记</option>
+                                            <option value="5">主任</option>
+                                            <option value="6">副主任</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--                                        <div class="form-group">-->
+                                <!--                                            <div class="input-group">-->
+                                <!--                                                <div class="input-group-addon">-->
+                                <!--                                                    <i class="fa fa-asterisk"></i>-->
+                                <!--                                                </div>-->
+                                <!--                                                <input type="password" id="username" name="password" placeholder="输入密码" class="form-control">-->
+                                <!--                                            </div>                                              -->
+                                <!--                                        </div>-->
+                                <!--                                        <div class="form-group">-->
+                                <!--                                            <div class="input-group">-->
+                                <!--                                                <div class="input-group-addon">-->
+                                <!--                                                    <i class="fa fa-asterisk"></i>-->
+                                <!--                                                </div>-->
+                                <!--                                                <input type="password" id="username" name="password" placeholder="确认密码" class="form-control">-->
+                                <!--                                            </div>                                              -->
+                                <!--                                        </div>                                                                                 -->
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-success" id="confirm_user_add" data-dismiss="modal">确认</button>
+                                <!--                                    <a href="user_base.html"><button type="button" class="btn btn-success">确认</button></a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .animated -->
+    </div>
+    <!-- /.content -->
+    <div class="clearfix"></div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner bg-white">
+            <div class="row">
+                <div class="col-sm-6">
+                    Copyright &copy; 2019 SSPKU Admin. 友情链接 <a href="http://www.ss.pku.edu.cn/" target="_blank" title="北京大学软件与微电子学院">北京大学软件与微电子学院</a>
+                </div>
+                <div class="col-sm-6 text-right"> Designed by SunJiajing
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /.site-footer -->
+</div>
+<!-- /#right-panel -->
+
+<!-- Scripts -->
+<script src="/static/assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="/static/assets/js/popper.min.js"></script>
+<script src="/static/assets/js/bootstrap.min.js"></script>
+<script src="/static/assets/js/jquery.matchHeight.min.js"></script>
+<script src="/static/assets/js/main.js"></script>
+<script src="/static/assets/js/sweetalert.min.js"></script>
+<script src="/static/assets/js/lib/data-table/datatables.min.js"></script>
+<script src="/static/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+<script src="/static/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+<script src="/static/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+<script src="/static/assets/js/lib/data-table/jszip.min.js"></script>
+<script src="/static/assets/js/lib/data-table/vfs_fonts.js"></script>
+<script src="/static/assets/js/lib/data-table/buttons.html5.min.js"></script>
+<script src="/static/assets/js/lib/data-table/buttons.print.min.js"></script>
+<script src="/static/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+<script src="/static/assets/js/init/datatables-init.js"></script>
+<script type="text/javascript">
+    $("#confirm_user_add").click(function (message) {
+        let work_id = $.trim($("#work_id").val());
+        let name = $.trim($("#name").val());
+        let type_id = $.trim($("#type_id").val());
+        let depart_id = $.trim($("#depart_id").val());
+        let position_id = $.trim($("#position_id").val());
+        $.post(
+            // "http://localhost:8080/index/adduser/addUser",
+            "/index/adduser/addUser",
+            {work_id: work_id, name: name, type_id: type_id, depart_id: depart_id, position_id: position_id},
+            function (data) {
+                console.log("ok");
+                console.log(data);
+            },
+            "json"
+        );
+    });
+
+    $("#importExcel").click(function () {
+        let formData = new FormData();
+        let name = $("#inputExcel").val();
+        formData.append("file", $("#inputExcel")[0].files[0]);
+        formData.append("name", name);
+        console.log(formData);
+        $.ajax({
+            // url: 'http://localhost:8080/index/adduser/addUserByExcel',
+            url: '/index/adduser/addUserByExcel',
+            data: formData,
+            type: 'POST',
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
