@@ -21,5 +21,5 @@ return [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
-
+    'user_base'=>'userbase/Usermanage/user_base',
 ];
