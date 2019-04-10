@@ -6,15 +6,15 @@
     <title>北大软微日程管理系统</title>
     <meta name="description" content="北大软微日程管理系统">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
-    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/normalize.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/style.css">
 </head>
 
 <body>
@@ -202,20 +202,20 @@
     <!-- /#right-panel -->
 
     <!-- Scripts -->
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/lib/data-table/datatables.min.js"></script>
-    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-    <script src="assets/js/lib/data-table/jszip.min.js"></script>
-    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
-    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="assets/js/init/datatables-init.js"></script>
+    <script src="__STATIC__/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="__STATIC__/assets/js/popper.min.js"></script>
+    <script src="__STATIC__/assets/js/bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/jquery.matchHeight.min.js"></script>
+    <script src="__STATIC__/assets/js/main.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="__STATIC__/assets/js/init/datatables-init.js"></script>  
 </body>
 </html>
