@@ -1,0 +1,424 @@
+<!doctype html>
+<html class="no-js" lang=""> 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>北大软微日程管理系统</title>
+    <meta name="description" content="北大软微日程管理系统">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="__STATIC__/assets/css/normalize.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/style.css">
+</head>
+
+<body>
+    <!-- Left Panel --> 
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">       
+                    <li class="menu-title">日程查询统计</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children">
+                        <a href="index.html"> <i class="menu-icon fa fa-search-plus"></i>日程查询</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-bar-chart-o"></i>日程统计 </a>
+                    </li> 
+
+
+                    <li class="menu-title">日程管理配置</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children">
+                        <a href="time.html"> <i class="menu-icon fa fa-calendar"></i>时间段管理</a>
+                    </li>
+                    <li class="menu-item-has-children active">
+                        <a href="{:url('locationmag/gotoScheduleArea')}"> <i class="menu-icon fa ti-location-pin"></i>地点管理 </a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="thing.html"> <i class="menu-icon fa fa-book"></i>事项管理</a>
+                    </li>
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-folder-open-o"></i>白名单管理 </a>
+                    </li>                     
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-arrows"></i> 
+                        设置可维护日程范围</a>
+                    </li>     
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-calendar-o"></i> 
+                        配置工作日</a>
+                    </li> 
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-square-o"></i> 
+                        缺省日程维护</a>                         
+
+                    <li class="menu-title">用户管理</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children">
+                        <a href="user_base.html"> <i class="menu-icon fa fa-user"></i>基础管理 </a>
+                    </li> 
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-building-o"></i>部门管理 </a>
+                    </li>  
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-lemon-o"></i>职务管理 </a>
+                    </li>                                             
+
+                    <li class="menu-title">管理员管理</li> 
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-group"></i>基础管理 </a>
+                    </li>                      
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-credit-card"></i>角色管理 </a>
+                    </li>                                           
+                     <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-sitemap"></i>权限管理 </a>
+                    </li>                     
+
+                    <li class="menu-title">日志管理</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children">
+                        <a href="log.html"> <i class="menu-icon fa fa-search"></i>日志查询</a>
+                    </li>    
+
+                    <li class="menu-title">消息管理</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children">
+                        <a href="#"> <i class="menu-icon fa fa-comment-o"></i>消息模板</a>
+                    </li>                                   
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><img src="__STATIC__/images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="index.html"><img src="__STATIC__/images/logo2.png" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                    
+                    </div>
+
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="__STATIC__/images/admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="page-login.html"><i class="fa fa-power-off"></i>退出</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <div class="content">
+            <div class="animated fadeIn">                
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                 <h4 class="box-title">日程地点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#smallmodal1">添加地点</button> 
+                                 </h4>
+                            </div>
+                            <div class="card-body--">
+                                <div class="table-stats">
+                                    <table id="bootstrap-data-table" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="serial">序号</th>
+                                                
+                                                <th>地点描述</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {notempty name="arealist"}
+                                            {foreach name="arealist" item="arealist"}
+                                            <tr>
+                                                <td class="serial">{$key+1}</td>
+                                                
+                                                <td>  <span class="product">{$arealist['name']}</span></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm mb-1" data-id="{$arealist.id}" data-des="{$arealist.name}" onclick='editArea(this)' data-toggle="modal" data-target="#smallmodal">
+                                                        <i class="fa fa-magic"></i>&nbsp;编辑
+                                                    </button>
+                                                    <a href="{:url('locationmag/locationmag/gotoScheduleArea')}">
+                                                    <button type="button" class="btn btn-danger btn-sm mb-1"  data-id="{$arealist.id}" onclick='delectArea(this)' data-toggle="modal">
+                                                        <i class="fa fa-exclamation"></i>&nbsp;删除
+                                                    </button></a>                                                                            
+                                                </td>                                             
+                                            </tr> 
+                                            {/foreach}
+                                        {/notempty}                     
+                                        </tbody>                                
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="scrollmodalLabel">编辑地点</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>  
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                </div>
+                                                <input type="text" id="editArea" name="username" value="" class="form-control">
+                                            </div>                                              
+                                        </div>        
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                    
+                                    <a href="{:url('locationmag/locationmag/gotoScheduleArea')}"><button id='editAreaBtn' onclick="changeArea(this)" type="button" class="btn btn-success">确认</button></a>
+                                    <!--
+                                    <button id='editAreaBtn' onclick="changeArea(this)" type="button" class="btn btn-success">确认</button>
+                                -->
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="modal fade" id="smallmodal1" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="scrollmodalLabel">添加地点</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>   
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                </div>
+                                                <input type="text" id="addNewAreaName" name="username" placeholder="地点描述" class="form-control">
+                                            </div>                                         
+                                        </div>        
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                    
+                                    <a href="{:url('locationmag/locationmag/gotoScheduleArea')}"><button id='addNewArea' type="button" class="btn btn-success">确认</button></a>
+                                
+                                    <!--
+                                    <button id='addNewArea' type="button" class="btn btn-success">确认</button>
+                               -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="makeSureModal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="scrollmodalLabel">确认框</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>   
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-pencil-square-o">是否继续？</i>
+                                                </div>
+                                                
+                                            </div>                                         
+                                        </div>        
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                    <a href="{:url('locationmag/locationmag/gotoScheduleArea')}"><button id='addNewArea' type="button" class="btn btn-success">确认</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2019 SSPKU Admin. 友情链接 <a href="http://www.ss.pku.edu.cn/" target="_blank" title="北京大学软件与微电子学院">北京大学软件与微电子学院</a> 
+                    </div>
+                    <div class="col-sm-6 text-right"> Designed by SunJiajing
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /.site-footer -->
+    </div>
+    <!-- /#right-panel -->
+
+    <!-- Scripts -->
+    <script src="__STATIC__/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="__STATIC__/assets/js/popper.min.js"></script>
+    <script src="__STATIC__/assets/js/bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/jquery.matchHeight.min.js"></script>
+    <script src="__STATIC__/assets/js/main.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="__STATIC__/assets/js/init/datatables-init.js"></script>
+    <script>
+        $(function(){
+            myclick();
+        })
+
+        //编辑地点信息
+        function editArea(data){
+            var id = $(data).attr('data-id');
+            var area = $(data).attr('data-des');
+            $('#editArea').val(area);
+            $('#editAreaBtn').attr('data-id',id);
+        }
+
+        //修改地点信息
+        function changeArea(data){
+            var id = $(data).attr('data-id');
+            var area = $('#editArea').val();
+            //alert(area);
+            if(area.trim().length > 10){
+                alert('不能超过10个字符');
+                return 0;
+            }else if(area.trim().length == 0){
+                alert('请输入字符');
+                return 0;
+            }else if(area.trim() == 'null'){
+                alert('请输字符不合法');
+                return 0;
+            }
+        var r=confirm("是否继续？")
+          if (r==true){
+            $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: "changeArea",
+                    data: {id:id,area:area,},
+                    dataType: "json",
+                    success: function(data){
+                        if(data == 0)
+                            alert('修改成功');
+                        else if(data == 1)
+                            alert('修改失败');
+                        else if(data == 3)
+                            alert('地点重复');
+                    }
+                });
+            }
+        }
+
+        //删除一个地点
+        function delectArea(data){
+            var id = $(data).attr('data-id');
+            //alert(id);
+          var r=confirm("是否继续？")
+          if (r==true){
+            $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: "deleteArea",
+                    data: {id:id,},
+                    dataType: "json",
+                    success: function(data){
+                        if(data == 0)
+                            alert('删除成功');
+                        else
+                            alert('删除失败');
+                    }
+                });
+        }
+        }
+
+        function myclick(){
+            //添加一个地点，确认按钮
+            $('#addNewArea').click(function(){
+                var area = $('#addNewAreaName').val();
+                //alert(area);
+                if(area.trim().length > 10){
+                    alert('不能超过10个字符');
+                    return 0;
+                }else if(area.trim().length == 0){
+                    alert('请输入字符');
+                    return 0;
+                }else if(area.trim() == 'null'){
+                    alert('请输字符不合法');
+                    return 0;
+                }
+          var r=confirm("是否继续？")
+          if (r==true){
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: "addNewArea",
+                    data: {areaName:area,},
+                    dataType: "json",
+                    success: function(data){
+                        if(data == 0)
+                            alert('添加成功');
+                        else if(data == 1)
+                            alert('添加失败');
+                        else if(data == 3)
+                            alert('地点重复');
+                    }
+                });
+            }
+            })
+
+            
+        }
+    </script>
+</body>
+</html>
