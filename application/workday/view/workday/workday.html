@@ -6,20 +6,20 @@
     <title>北大软微日程管理系统</title>
     <meta name="description" content="北大软微日程管理系统">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/normalize.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="/assets/css/pe-icon-7-filled.css">
-    <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="/assets/css/lib/datatable/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/normalize.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/style.css">
     <!-- 新加路径 -->
-    <link href="/calendar/css/calendarAll.css" rel="stylesheet" type="text/css"/>
-    <link href="/calendar/css/skin.css" rel="stylesheet" type="text/css"/>
-    <link href="/calendar/css/fontSize12.css" rel="stylesheet" type="text/css"/>
-    <link href="/calendar/css/calendar.css" rel="stylesheet" type="text/css"/>
+    <link href="__STATIC__/calendar_redpanda/css/calendarAll.css" rel="stylesheet" type="text/css"/>
+    <link href="__STATIC__/calendar_redpanda/css/skin.css" rel="stylesheet" type="text/css"/>
+    <link href="__STATIC__/calendar_redpanda/css/fontSize12.css" rel="stylesheet" type="text/css"/>
+    <link href="__STATIC__/calendar_redpanda/css/calendar.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
@@ -32,7 +32,7 @@
                 <ul class="nav navbar-nav">       
                     <li class="menu-title">日程查询统计</li><!-- /.menu-title -->
                     <li class="menu-item-has-children active">
-                        <a href="index.html"> <i class="menu-icon fa fa-search-plus"></i>日程查询</a>
+                        <a href="{:url('index/index/index')}"> <i class="menu-icon fa fa-search-plus"></i>日程查询</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#"> <i class="menu-icon fa fa-bar-chart-o"></i>日程统计 </a>
@@ -40,7 +40,7 @@
 
                     <li class="menu-title">日程管理配置</li><!-- /.menu-title -->
                     <li class="menu-item-has-children">
-                        <a href="{:url('index/time')}"> <i class="menu-icon fa fa-calendar"></i>时间段管理</a>
+                        <a href="{:url('index/index/time')}"> <i class="menu-icon fa fa-calendar"></i>时间段管理</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="area.html"> <i class="menu-icon fa ti-location-pin"></i>地点管理 </a>
@@ -49,7 +49,7 @@
                         <a href="thing.html"> <i class="menu-icon fa fa-book"></i>事项管理</a>
                     </li>
                      <li class="menu-item-has-children">
-                        <a href="#"> <i class="menu-icon fa fa-folder-open-o"></i>白名单管理 </a>
+                        <a href="{:url('whitelist/add/index')}"> <i class="menu-icon fa fa-folder-open-o"></i>白名单管理 </a>
                     </li>                     
                      <li class="menu-item-has-children">
                         <a href="#"> <i class="menu-icon fa fa-arrows"></i> 
@@ -303,21 +303,21 @@
     <!-- /#right-panel -->
 
     <!-- Scripts -->
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/lib/data-table/datatables.min.js"></script>
-    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-    <script src="assets/js/lib/data-table/jszip.min.js"></script>
-    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
-    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="assets/js/init/datatables-init.js"></script>
+    <script src="__STATIC__/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="__STATIC__/assets/js/popper.min.js"></script>
+    <script src="__STATIC__/assets/js/bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/jquery.matchHeight.min.js"></script>
+    <script src="__STATIC__/assets/js/main.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="__STATIC__/assets/js/init/datatables-init.js"></script>
     <!-- 新加Scripts -->
     <SCRIPT language="JavaScript">
         $("td").click(function(){    //td点击事件；
@@ -357,8 +357,8 @@
         }          
         
          </SCRIPT>
-    <script type="text/javascript" src="/calendar/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/calendar/js/calendar.js"></script>
+    <script type="text/javascript" src="__STATIC__/calendar_redpanda/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/calendar_redpanda/js/calendar.js"></script>
 
 </body>
 </html>
