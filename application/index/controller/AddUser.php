@@ -4,21 +4,26 @@ namespace app\index\controller;
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use think\Controller;
 use think\Db;
 use think\Exception;
 
 
-class Test
+class AddUser extends Controller
 {
-    public function test()
-    {
-        $spreadsheet = new Spreadsheet();
-        $sheet = $spreadsheet->getActiveSheet();
-        $sheet->setCellValue('A1', 'Welcome to Helloweba.');
+//    public function test()
+//    {
+//        $spreadsheet = new Spreadsheet();
+//        $sheet = $spreadsheet->getActiveSheet();
+//        $sheet->setCellValue('A1', 'Welcome to Helloweba.');
+//
+//        $writer = new Xlsx($spreadsheet);
+//        $writer->save('hello.xlsx');
+//        return '[hello,test]';
+//    }
 
-        $writer = new Xlsx($spreadsheet);
-        $writer->save('hello.xlsx');
-        return '[hello,test]';
+    public function index() {
+        return $this->fetch('user_base');
     }
 
     public function addUser() {
