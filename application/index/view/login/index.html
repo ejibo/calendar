@@ -1,0 +1,137 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>登录系统</title>-->
+<!--    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--</head>-->
+
+<!--<body class="gray-bg">-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <title>短信验证码登录</title>
+    <script type="text/javascript" src="uc/jquery-easyui-1.4.5/jquery.min.js"></script>
+</head>
+<body style="background-color:#48c690">
+<br>
+<p style="text-align:center"><b>测试短信验证码</b></p>
+<!--<p style="text-align:center;color:#FF0000">测试前，请先阅读《请先读我（重要）.doc》并配置好相应参数,<a href="http://docs.ucpaas.com/doku.php?id=error_code" target="black">点击查看错误码</a></p>-->
+<div style="margin:0 auto;width:350px;height:150px">
+    <form id="myForm" action="{:url('login/dologin')}smsyzm.php" method="post">
+        <table>
+            <tr>
+                <td>接收短信的手机号: </td>
+                <td><input type="text" name="yzmtel" size="20" style="margin-right:0px"> </td>
+            </tr>
+            <tr>
+                <td>验证码: </td>
+                <td><input type="text" name="yzm" size="20" style="margin-right:0px"></td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="document.getElementById('myForm').submit();"></td>
+                <td><input type="submit" value="发送验证码" style="margin-left: 0px;width:100px;"/></td>
+            </tr>
+        </table>
+    </form>
+    <form>
+        <table>
+            <tr>
+                <td><a href="#" onclick="document.getElementById('myForm').submit();"></td>
+                <td><input type="submit" value="登录" style="margin-left: 0px;width:100px;"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-sm-7">-->
+<!--            <div class="ibox float-e-margins">-->
+<!--                <div class="ibox-content">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-sm-6 b-r">-->
+<!--                            <h3 class="m-t-none m-b">手机验证码登录</h3>-->
+<!--                            <form role="form" action="{:url('login/dologin')}" method="post">-->
+<!--                                <div class="form-group">-->
+<!--                                    <label>手机号</label>-->
+<!--                                    <input type="text" placeholder=" 请输入手机号" class="form-control" name = "user_name">-->
+<!--                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>发送验证码</strong>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--&lt;!&ndash;                                <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <label>密码</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <input type="password" placeholder=" 请 输 入 密 码 " class="form-control" name = "user_pwd">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div>&ndash;&gt;-->
+<!--                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>登 录</strong>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="/static/js/jquery.min.js?v=2.1.4"></script>-->
+<!--<script src="/static/bootstrap/js/bootstrap.min.js"></script>-->
+</body>
+</html>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>登录系统</title>-->
+<!--    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--</head>-->
+
+<!--<body class="gray-bg">-->
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-sm-7">-->
+<!--            <div class="ibox float-e-margins">-->
+<!--                <div class="ibox-content">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-sm-6 b-r">-->
+<!--                            <h3 class="m-t-none m-b">登录</h3>-->
+<!--                            <p>欢迎登录本站(⊙o⊙)</p>-->
+<!--                            <form role="form" action="{:url('login/dologin')}" method="post">-->
+<!--                                <div class="form-group">-->
+<!--                                    <label>用户名</label>-->
+<!--                                    <input type="text" placeholder=" 请输入用户名" class="form-control" name = "user_name">-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <label>密码</label>-->
+<!--                                    <input type="password" placeholder=" 请 输 入 密 码 " class="form-control" name = "user_pwd">-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>登 录</strong>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="/static/js/jquery.min.js?v=2.1.4"></script>-->
+<!--<script src="/static/bootstrap/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<html>-->
+<!--<head>-->
+<!--    <title>PHP 测试</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<?php echo '<p>Hello World</p>'; ?>-->
+<!--</body>-->
+<!--</html>-->
