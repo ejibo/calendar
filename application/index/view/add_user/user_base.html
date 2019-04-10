@@ -143,6 +143,8 @@
                                 <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#smallmodal1">添加用户</button>
                                 <input type="file" id="inputExcel" />
                                 <button class="btn btn-success btn-sm" id="importExcel">批量导入</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="button" class="btn btn-success btn-sm"  value="导出为excel" onclick="method5('bootstrap-data-table')">
                             </h4>
                         </div>
                         <div class="card-body--">
@@ -158,174 +160,27 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="serial">1.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">普通用户</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">2.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">系领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">3.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">部门领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">4.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">院领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">5.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">普通用户</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">6.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">系领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">7.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">部门领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">8.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">院领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">9.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">普通用户</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">10.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">系领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">11.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">部门领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">12.</td>
-                                        <td>  <span class="product">1801210880</span> </td>
-                                        <td>  <span class="product">孙佳静</span> </td>
-                                        <td> <span class="product">院领导</span> </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
-                                                <i class="fa fa-magic"></i>&nbsp;编辑
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm mb-1" >
-                                                <i class="fa fa-exclamation"></i>&nbsp;删除
-                                            </button>
-                                        </td>
-                                    </tr>
+                                        {volist name="list" id="vo"}
+                                        <tr>
+                                            <td class="serial">{$vo.id}</td>            
+                                            <td>  <span class="product">{$vo.work_id}</span> </td>
+                                            <td>  <span class="product">{$vo.name}</span> </td>                                                
+                                            <td> <span class="product"><?php $user_dict = [
+                                                0=>"普通用户",
+                                                1=>"院领导",
+                                                2=>"部门领导",
+                                                3=>"系领导",
+                                            ]; echo $user_dict[$vo['type_id']]; ?></span> </td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
+                                                    <i class="fa fa-magic"></i>&nbsp;编辑
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-sm mb-1" >
+                                                    <i class="fa fa-exclamation"></i>&nbsp;删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        {/volist}
                                     </tbody>
                                 </table>
                             </div>
@@ -533,6 +388,7 @@
 <script src="/static/assets/js/lib/data-table/buttons.print.min.js"></script>
 <script src="/static/assets/js/lib/data-table/buttons.colVis.min.js"></script>
 <script src="/static/assets/js/init/datatables-init.js"></script>
+<script src="/static/assets/js/lib/data-table/checkall.js"></script>
 <script type="text/javascript">
     $("#confirm_user_add").click(function (message) {
         let work_id = $.trim($("#work_id").val());

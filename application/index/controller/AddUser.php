@@ -22,8 +22,11 @@ class AddUser extends Controller
 //        return '[hello,test]';
 //    }
 
-    public function index() {
-        return $this->fetch('user_base');
+    public function user_base() {
+        $userlist = Db::table('user_info')
+            ->select();
+        $this->assign("list", $userlist);
+        return $this->fetch();
     }
 
     public function addUser() {
