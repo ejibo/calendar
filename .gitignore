@@ -11,4 +11,9 @@ Vagrantfile
 .vagrant
 composer.lock
 *.log
+<<<<<<< HEAD
+/public/config.json
+.vscode
+=======
 */DS_Store
+>>>>>>> d8a80a7798455d555e9cd68fd4ebc95754b82012
