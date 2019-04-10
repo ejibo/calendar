@@ -46,6 +46,12 @@ class Index extends Controller
         $names = explode(" ",$mydata['names']);
         $nameids = array();
         foreach ($names as $name) {
+            if (empty(Db::table('user_info')
+            ->where('user_info.name',$name)
+            ->field('id')
+            ->select())){
+                return $this->error('查询姓名',$name,'不存在！');
+            }
             array_push($nameids,Db::table('user_info')
             ->where('user_info.name',$name)
             ->field('id')
