@@ -15,19 +15,15 @@ return [
     // 服务器地址
     'hostname'        => '188.131.129.161',
     // 数据库名
-<<<<<<< HEAD
-    'database'        => 'place_msg',
-=======
+
     'database'        => 'daily_manage',
->>>>>>> 0b41b58450a298d66e00e4f029eb2eafd6067f81
+
     // 用户名
     'username'        => 'student',
     // 密码
-<<<<<<< HEAD
-    'password'        => 'nishishuia123...',
-=======
+
     'password'        => 'ZrjmHzt8pdMtS7yL',
->>>>>>> 0b41b58450a298d66e00e4f029eb2eafd6067f81
+
     // 端口
     'hostport'        => '',
     // 连接dsn
