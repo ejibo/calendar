@@ -1,4 +1,5 @@
 ﻿<?php
+namespace sms\lib;
 
 /**
  * Created by Notepad++
