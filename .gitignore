@@ -11,3 +11,5 @@ Vagrantfile
 .vagrant
 composer.lock
 *.log
+/public/config.json
+.vscode
