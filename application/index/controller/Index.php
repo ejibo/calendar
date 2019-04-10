@@ -141,6 +141,22 @@ class Index extends Controller
         ]);
         return $this->user_position_list();
     }
+    /**
+     * @purpose：
+     *  修改职务信息
+     * @Author 第5组 张君兰
+     * @Date 2019-4-10
+     *
+     */
+    //修改职位
+    function modify($user_id) {
+        $data = array();
+        $data['is_delete'] = 1;
+        $data['delete_time'] =  Db::raw('now()');
+        Db::table('user_info')->where('id', $user_id)->update($data);
+        $this->redirect('/index/index/user_position_list');
+    }
+
 
     //作废职位
 
