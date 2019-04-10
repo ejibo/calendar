@@ -5,6 +5,6 @@ class Index
 {
     public function index()
     {
-        $this->display('search');
+        $this->redirect('search');
     }
 }
