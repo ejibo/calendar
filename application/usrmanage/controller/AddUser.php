@@ -1,6 +1,6 @@
 <?php
 
-namespace app\index\controller;
+namespace app\usrmanage\controller;
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;

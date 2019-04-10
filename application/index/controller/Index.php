@@ -181,6 +181,6 @@ class Index extends Controller
      *第11组 用户管理 重定向到user_base模块
      */
     function user_base(){
-        return $this->redirect('/user_base');
+        return $this->redirect('/adduser/user_base');
     }
 }
