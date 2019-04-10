@@ -6,19 +6,19 @@
     <title>北大软微日程管理系统</title>
     <meta name="description" content="北大软微日程管理系统">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/normalize.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/pe-icon-7-filled.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/lib/datatable/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/assets/css/style.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/normalize.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/assets/css/style.css">
 </head>
 
 <body>
-    <!-- Left Panel -->
+    <!-- Left Panel --> 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -99,8 +99,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><img src="__PUBLIC__/images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="index.html"><img src="__PUBLIC__/images/logo2.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="__STATIC__/images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="index.html"><img src="__STATIC__/images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -119,7 +119,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="__PUBLIC__/images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="__STATIC__/images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -158,7 +158,7 @@
                                             {foreach name="arealist" item="arealist"}
                                             <tr>
                                                 <td class="serial">{$key+1}</td>
-                                                __PUBLIC__
+                                                
                                                 <td>  <span class="product">{$arealist['name']}</span></td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary btn-sm mb-1" data-id="{$arealist.id}" data-des="{$arealist.name}" onclick='editArea(this)' data-toggle="modal" data-target="#smallmodal">
@@ -297,21 +297,21 @@
     <!-- /#right-panel -->
 
     <!-- Scripts -->
-    <script src="__PUBLIC__/assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="__PUBLIC__/assets/js/popper.min.js"></script>
-    <script src="__PUBLIC__/assets/js/bootstrap.min.js"></script>
-    <script src="__PUBLIC__/assets/js/jquery.matchHeight.min.js"></script>
-    <script src="__PUBLIC__/assets/js/main.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/datatables.min.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/jszip.min.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/vfs_fonts.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/buttons.html5.min.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/buttons.print.min.js"></script>
-    <script src="__PUBLIC__/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="__PUBLIC__/assets/js/init/datatables-init.js"></script>
+    <script src="__STATIC__/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="__STATIC__/assets/js/popper.min.js"></script>
+    <script src="__STATIC__/assets/js/bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/jquery.matchHeight.min.js"></script>
+    <script src="__STATIC__/assets/js/main.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="__STATIC__/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="__STATIC__/assets/js/init/datatables-init.js"></script>
     <script>
         $(function(){
             myclick();
