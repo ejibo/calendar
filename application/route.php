@@ -9,6 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+use think\Route;
+
+Route::get("index/user_position_list", "index/Index/user_position_list");
+
 return [
     '__pattern__' => [
         'name' => '\w+',
@@ -18,4 +22,5 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
+    'adduser/user_base'=>'index/AddUser/user_base',
 ];

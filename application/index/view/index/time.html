@@ -63,7 +63,7 @@
                         <li class="menu-title">用户管理</li>
                         <!-- /.menu-title -->
                         <li class="menu-item-has-children">
-                            <a href="user_base.html"> <i class="menu-icon fa fa-user"></i>基础管理 </a>
+                            <a href="../adduser/user_base.html"> <i class="menu-icon fa fa-user"></i>基础管理 </a>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="#"> <i class="menu-icon fa fa-building-o"></i>部门管理 </a>
@@ -385,6 +385,7 @@
             else
                 alert(data);
         });
+      });
 
        // 删除时间段描述模态框
        $('#smallmodaldelete').on('show.bs.modal', function (event) {
@@ -416,6 +417,7 @@
             else
                 alert("删除失败，重新操作");
         });
+      });
 
         // 确认新增ajax
         $("#confirmadd").click(function(){
@@ -445,6 +447,7 @@
             else
                 alert(data);
         });
+      });
     </script>
 </body>
 

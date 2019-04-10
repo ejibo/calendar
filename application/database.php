@@ -15,15 +15,11 @@ return [
     // 服务器地址
     'hostname'        => '188.131.129.161',
     // 数据库名
-
     'database'        => 'daily_manage',
-
     // 用户名
     'username'        => 'student',
     // 密码
-
     'password'        => 'ZrjmHzt8pdMtS7yL',
-
     // 端口
     'hostport'        => '',
     // 连接dsn

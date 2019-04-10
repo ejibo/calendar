@@ -122,6 +122,42 @@ class Index extends Controller
         return $this->fetch();
     }
 
+      /**
+     * @purpose：
+     *  添加职务信息
+     * @Author 第5组 张楚悦
+     * @Date 2019-4-10
+     * 
+     */
+    //添加职务
+
+    public function addPosition()
+    {
+        $name = $_POST['name'];
+        $position = $_POST['position'];
+        Db:: table('user_info')->insert([
+            'name' => $name,
+            'position' => $position
+        ]);
+        return $this->user_position_list();
+    }
+    /**
+     * @purpose：
+     *  修改职务信息
+     * @Author 第5组 张君兰
+     * @Date 2019-4-10
+     *
+     */
+    //修改职位
+    function modify($user_id) {
+        $data = array();
+        $data['is_delete'] = 1;
+        $data['delete_time'] =  Db::raw('now()');
+        Db::table('user_info')->where('id', $user_id)->update($data);
+        $this->redirect('/index/index/user_position_list');
+    }
+
+
     //作废职位
 
     function invalid($user_id) {
@@ -139,5 +175,54 @@ class Index extends Controller
         $data['delete_time'] =  Db::raw('now()');
         Db::table('user_position')->where('id', $user_id)->update($data);
         $this->redirect('/index/index/user_position_list');
+    }
+
+    /**
+     *第11组 用户管理 重定向到user_base模块
+     */
+    function user_base(){
+        return $this->redirect('/user_base');
+    }
+  
+  //添加默认日程
+  public function addNewDefaultSchedule(){
+        $param =Request::instance()->param();
+        $cookie=Request::instance()->cookie();
+        $user_id=$cookie['user_id'];
+        if(is_null($user_id))
+           return ["code"=>400,'message'=>'用户不存在','msg'=>'用户不存在','data'=>[]];
+
+        $time_id=Db::table('schedule_time')->where('name',$param['time'])->find();
+        if(is_null($time_id))
+            return ['code'=>1,'message'=>'未定义的时间段','msg'=>'未定义的时间段','data'=>[]];
+
+        $res=Db::table('schedule_default')->where('user_id',$user_id)->where('time_id',$time_id)->where('is_delete',0)->find();
+        if(res!=null)
+            return ['code'=>2,'message'=>'已存在该时间段的默认日程，可点击编辑进行修改','msg'=>'已存在该时间段的默认日程，可点击编辑进行修改','data'=>[]];
+
+        $place_id=Db::table('schedule_place')->where('name',$param['place'])->find();
+        if(is_null($place_id)){
+            $place_id=Db::table('schedule_place')->insertGetId(['name'=>$param['place'],'is_delete'=>0]);
+        }
+        $item_id=Db::table('schedule_item')->where('name',$param['item']);
+        if(is_null($item_id)){
+            $item_id=Db::table('schedule_item')->insertGetId(['name'=>$param['item'],'is_delete'=>0]);
+        }
+        $map['user_id']=$user_id;
+        $map['time_id']=$time_id;
+        $map['place_id']=$place_id;
+        $map['item_id']=$item_id;
+        $map['is_delete']=0;
+        $res=Db::table('schedule_default')->where($map)->find();
+        if($res==null){
+            $data=['user_id'=>$user_id,
+                'time_id'=>$time_id,
+                'place_id'=>$place_id,
+                'item_id'=>$item_id];
+            Db::table('schedule_default')->insert(data);
+            return ['code'=>0,'message'=>'success','msg'=>'success','data'=>[]];
+        }else{
+            return ['code'=>3,'message'=>'已存在相同的记录','msg'=>'已存在相同的记录','data'=>[]];
+        }
     }
 }
