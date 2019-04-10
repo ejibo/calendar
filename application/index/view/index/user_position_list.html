@@ -7,15 +7,15 @@
     <title>北大软微日程管理系统</title>
     <meta name="description" content="北大软微日程管理系统">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="__STATIC__/assets/css/normalize.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/pe-icon-7-filled.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/lib/datatable/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="__STATIC__/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 
                     <li class="menu-title">日程管理配置</li>
                     <!-- /.menu-title -->
-                    <li class="menu-item-has-children active">
+                    <li class="menu-item-has-children">
                         <a href="time.html"> <i class="menu-icon fa fa-calendar"></i>时间段管理</a>
                     </li>
                     <li class="menu-item-has-children">
@@ -68,8 +68,8 @@
                         <li class="menu-item-has-children">
                             <a href="#"> <i class="menu-icon fa fa-building-o"></i>部门管理 </a>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="{:url('index/user_position_list')}"> <i class="menu-icon fa fa-lemon-o"></i>职务管理 </a>
+                        <li class="menu-item-has-children active">
+                            <a href="title-delete.html"> <i class="menu-icon fa fa-lemon-o"></i>职务管理 </a>
                         </li>
 
                         <li class="menu-title">管理员管理</li>
@@ -80,8 +80,9 @@
                             <a href="#"> <i class="menu-icon fa fa-credit-card"></i>角色管理 </a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#"> <i class="menu-icon fa fa-sitemap"></i>权限管理 </a>
+                            <a href="{:url('index/user_position_list')}"> <i class="menu-icon fa fa-sitemap"></i>权限管理 </a>
                         </li>
+
 
                         <li class="menu-title">日志管理</li>
                         <!-- /.menu-title -->
@@ -106,8 +107,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><img src="__STATIC__/images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="index.html"><img src="__STATIC__/images/logo2.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="index.html"><img src="/images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -126,7 +127,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="__STATIC__/images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="/images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -145,8 +146,8 @@
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="box-title">日程时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#smallmodal1">添加时间</button>
+                                <h4 class="box-title">所有职务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#smallmodal1">添加职务</button>
                                 </h4>
                             </div>
                             <div class="card-body--">
@@ -155,27 +156,32 @@
                                         <thead>
                                             <tr>
                                                 <th class="serial">序号</th>
-                                                <th>时间ID</th>
-                                                <th>时间描述</th>
+                                                <th>职务</th>
+                                                <th>状况</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+
                                             {volist name="list" id="vo"}
+
                                             <tr>
-                                                <td class="serial">{$i}.</td>
-                                                <td> <span class="product">{$vo.id}</span> </td>
+                                                <td class="serial">{$vo.id}.</td>
                                                 <td> <span class="product">{$vo.name}</span> </td>
+                                                <td> <span class="product">{eq name="vo.is_delete" value="0"}正常{else/}已作废{/eq}</span> </td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#smallmodal">
                                                         <i class="fa fa-magic"></i>&nbsp;编辑
-                                                    </button>
-                                                    <button type="button" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#smallmodaldelete">
-                                                        <i class="fa fa-exclamation"></i>&nbsp;删除
-                                                    </button>
+                                                    </button> {eq name="vo.is_delete" value="0"}<a href="{:url('/index/index/invalid','user_id='.$vo.id);}"><button type="button" class="btn btn-danger btn-sm mb-1">
+                                                        <i class="fa fa-exclamation"></i>&nbsp;作废
+                                                    </button></a>{else/}<a href="{:url('/index/index/restore','user_id='.$vo.id);}"><button type="button" class="btn btn-success btn-sm mb-1">
+                                                        <i class="fa fa-exclamation"></i>&nbsp;恢复
+                                                    </button></a>{/eq}
+
                                                 </td>
                                             </tr>
                                             {/volist}
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -186,34 +192,63 @@
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="scrollmodalLabel">编辑时间</h5>
+                                    <h5 class="modal-title" id="scrollmodalLabel">编辑用户</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                 </div>
                                 <div class="modal-body">
                                     <p>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-check-square-o"></i>
+                                                    <i class="fa fa-credit-card"></i>
                                                 </div>
-                                                <input type="text" id="timeid" name="username" value="" class="form-control" disabled="disabled">
+                                                <input type="text" id="username" name="username" value="1801210880" class="form-control" disabled="disabled">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-pencil-square-o"></i>
+                                                    <i class="fa fa-user"></i>
                                                 </div>
-                                                <input type="text" id="timename" name="username" value="" class="form-control">
+                                                <input type="text" id="username" name="username" value="孙佳静" class="form-control" disabled="disabled">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-users"></i>
+                                                </div>
+                                                <select name="select" id="select" class="form-control">
+                                                    <option value="0">普通用户</option>
+                                                    <option value="1">院领导</option>    
+                                                    <option value="2">系领导</option>
+                                                    <option value="3">部门领导</option>                                                                 
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-asterisk"></i>
+                                                </div>
+                                                <input type="password" id="username" name="password" placeholder="请输入新密码" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-asterisk"></i>
+                                                </div>
+                                                <input type="password" id="username" name="password" placeholder="确认密码" class="form-control">
                                             </div>
                                         </div>
                                     </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                                    <button type="button" class="btn btn-success" id="confirmchange">确认</button>
+                                    <a href="user_base.html"><button type="button" class="btn btn-success">确认</button></a>
                                 </div>
                             </div>
                         </div>
@@ -222,70 +257,63 @@
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="scrollmodalLabel">添加时间</h5>
+                                    <h5 class="modal-title" id="scrollmodalLabel">添加用户</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>
-                                        <!-- <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </div>
-                                                <input type="text" id="username" name="username" value="16" class="form-control" disabled="disabled"> 
-                                            </div>                                              
-                                        </div>   -->
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                </div>
-                                                <input type="text" id="time_name_add" name="username" placeholder="时间描述" class="form-control">
-                                            </div>
-                                        </div>
-                                    </p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                                    <button type="button" class="btn btn-success" id="confirmadd">确认</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="smallmodaldelete" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-sm" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="scrollmodalLabel">删除时间</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                 </div>
                                 <div class="modal-body">
                                     <p>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-check-square-o"></i>
+                                                    <i class="fa fa-credit-card"></i>
                                                 </div>
-                                                <input type="text" id="time_id_delete" name="username" value="16" class="form-control" disabled="disabled">
+                                                <input type="text" id="username" name="username" placeholder="学(工)号" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-pencil-square-o"></i>
+                                                    <i class="fa fa-user"></i>
                                                 </div>
-                                                <input type="text" id="time_name_delete" name="username" placeholder="时间描述" class="form-control" disabled="disabled">
+                                                <input type="text" id="username" name="username" placeholder="姓名" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-users"></i>
+                                                </div>
+                                                <select name="select" id="select" class="form-control">
+                                                    <option value="0">普通用户</option>
+                                                    <option value="1">院领导</option>    
+                                                    <option value="2">系领导</option>
+                                                    <option value="3">部门领导</option>                                                                 
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-asterisk"></i>
+                                                </div>
+                                                <input type="password" id="username" name="password" placeholder="输入密码" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-asterisk"></i>
+                                                </div>
+                                                <input type="password" id="username" name="password" placeholder="确认密码" class="form-control">
                                             </div>
                                         </div>
                                     </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                                    <button type="button" class="btn btn-success" id="confirmdelete">确认删除</button>
+                                    <a href="user_base.html"><button type="button" class="btn btn-success">确认</button></a>
                                 </div>
                             </div>
                         </div>
@@ -313,96 +341,21 @@
     <!-- /#right-panel -->
 
     <!-- Scripts -->
-    <script src="__STATIC__/assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="__STATIC__/assets/js/popper.min.js"></script>
-    <script src="__STATIC__/assets/js/bootstrap.min.js"></script>
-    <script src="__STATIC__/assets/js/jquery.matchHeight.min.js"></script>
-    <script src="__STATIC__/assets/js/main.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/datatables.min.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/jszip.min.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/vfs_fonts.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/buttons.html5.min.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/buttons.print.min.js"></script>
-    <script src="__STATIC__/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="__STATIC__/assets/js/init/datatables-init.js"></script>
-    <script type="text/javascript">
-        // 修改时间段描述 模态框
-        $('#smallmodal').on('show.bs.modal', function(event) {
-            var btnThis = $(event.relatedTarget); //触发事件的按钮
-            var modal = $(this); //当前模态框
-            var modalId = btnThis.data('id'); //解析出data-id的内容
-            var id = btnThis.closest('tr').find('td').eq(1).text();
-            var content = $.trim(btnThis.closest('tr').find('td').eq(2).text());
-            modal.find('#timeid').val(id);
-            modal.find('#timename').val(content);
-        });
-
-        // 确认修改ajax
-        $("#confirmchange").click(function() {
-            //先略过不合法输入,只做trim处理
-            var timeid = $('#timeid').val();
-            var timename = $.trim($('#timename').val());
-            //post方法修改
-            $.post("{:url('index/timechange')}", {
-                    id: timeid,
-                    name: timename
-                },
-                function(data, status) {
-                    if (data == "更新成功")
-                        location.reload();
-                    else
-                        alert("更新失败，重新操作");
-                });
-        });
-
-        // 删除时间段描述模态框
-        $('#smallmodaldelete').on('show.bs.modal', function(event) {
-            var btnThis = $(event.relatedTarget); //触发事件的按钮
-            var modal = $(this); //当前模态框
-            var modalId = btnThis.data('id'); //解析出data-id的内容
-            var id = btnThis.closest('tr').find('td').eq(1).text();
-            var content = $.trim(btnThis.closest('tr').find('td').eq(2).text());
-            modal.find('#time_id_delete').val(id);
-            modal.find('#time_name_delete').val(content);
-        });
-
-        // 确认删除ajax
-        $("#confirmdelete").click(function() {
-            //先略过不合法输入,只做trim处理
-            var timeid = $('#time_id_delete').val();
-            var timename = $.trim($('#time_name_delete').val());
-            //post方法修改
-            $.post("{:url('index/timedelete')}", {
-                    id: timeid,
-                    name: timename
-                },
-                function(data, status) {
-                    if (data == "删除成功")
-                        location.reload();
-                    else
-                        alert("删除失败，重新操作");
-                });
-        });
-
-        // 确认新增ajax
-        $("#confirmadd").click(function() {
-            //先略过不合法输入,只做trim处理
-            var timename = $.trim($('#time_name_add').val());
-            //post方法修改
-            $.post("{:url('index/timeadd')}", {
-                    name: timename
-                },
-                function(data, status) {
-                    if (data == "更新成功")
-                        location.reload();
-                    else
-                        alert("更新失败，重新操作");
-                });
-        });
-    </script>
+    <script src="/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.matchHeight.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="/assets/js/init/datatables-init.js"></script>
 </body>
 
 </html>

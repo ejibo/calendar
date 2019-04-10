@@ -96,4 +96,33 @@ class Index extends Controller
         }
         return "更新失败";        
     }
+
+        //列表
+    /* 第05组 高裕欣 
+    显示职位 */
+    public function user_position_list() {
+        $list = Db::table('user_position')
+                ->select();
+        $this->assign("list", $list);
+        return $this->fetch();
+    }
+
+    //作废职位
+
+    function invalid($user_id) {
+        $data = array();
+        $data['is_delete'] = 1;
+        $data['delete_time'] =  Db::raw('now()');
+        Db::table('user_position')->where('id', $user_id)->update($data);
+        $this->redirect('/index/index/user_position_list');
+    }
+    //恢复职位
+    
+    function restore($user_id) {
+        $data = array();
+        $data['is_delete'] = 0;
+        $data['delete_time'] =  Db::raw('now()');
+        Db::table('user_position')->where('id', $user_id)->update($data);
+        $this->redirect('/index/index/user_position_list');
+    }
 }
