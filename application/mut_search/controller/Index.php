@@ -39,6 +39,10 @@ class Index extends Controller
 
     public function searchnames(){
         $mydata = input('post.');
+        if (empty($mydata['names'])){
+            return $this->error('输入不可为空');
+        }
+
         $names = explode(" ",$mydata['names']);
         $nameids = array();
         foreach ($names as $name) {
@@ -71,6 +75,7 @@ class Index extends Controller
         #echo "<pre>";print_r($nameids);echo "<pre>";
         #echo "<pre>";print_r($info);echo "<pre>";
         #echo "<pre>";print_r($finalres);echo "<pre>";
-        return $this->fetch('search');
+        #return $this->fetch('search');
+        return view('search');
     }
 }
