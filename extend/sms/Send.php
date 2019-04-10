@@ -1,8 +1,7 @@
 <?php
 /**
- * User: Xunm
- * Date: 2018/10/5
- * Time: 17:40
+ * 在控制器中 use sms\Send
+ * 调用SendSms(‘验证码’,‘手机号’)函数并传入验证码及手机号即可。
  */
 namespace sms;
 
