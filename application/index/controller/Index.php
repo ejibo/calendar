@@ -125,4 +125,11 @@ class Index extends Controller
         Db::table('user_position')->where('id', $user_id)->update($data);
         $this->redirect('/index/index/user_position_list');
     }
+
+    /**
+     *第11组 用户管理 重定向到user_base模块
+     */
+    function user_base(){
+        return $this->redirect('/user_base');
+    }
 }
