@@ -122,6 +122,26 @@ class Index extends Controller
         return $this->fetch();
     }
 
+      /**
+     * @purpose：
+     *  添加职务信息
+     * @Author 第5组 张楚悦
+     * @Date 2019-4-10
+     * 
+     */
+    //添加职务
+
+    public function addPosition()
+    {
+        $name = $_POST['name'];
+        $position = $_POST['position'];
+        Db:: table('user_info')->insert([
+            'name' => $name,
+            'position' => $position
+        ]);
+        return $this->user_position_list();
+    }
+
     //作废职位
 
     function invalid($user_id) {
