@@ -22,5 +22,6 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
-    'adduser/user_base'=>'index/AddUser/user_base',
+    'adduser/user_base'=>'usrmanage/add_user/user_base',
+    'index/adduser/user_base'=>'usrmanage/add_user/user_base',
 ];
